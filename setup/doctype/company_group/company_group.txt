@@ -1,0 +1,152 @@
+# DocType, Company Group
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2011-07-29 16:55:15',
+		'docstatus': 0,
+		'modified': '2011-07-29 16:57:45',
+		'modified_by': 'Administrator',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all DocType
+	{
+		'_last_update': '1311938812',
+		'allow_email': 1,
+		'allow_print': 1,
+		'allow_trash': 1,
+		'autoname': 'field:group_name',
+		'colour': 'White:FFF',
+		'doctype': 'DocType',
+		'document_type': 'Master',
+		'hide_toolbar': 0,
+		'in_create': 0,
+		'in_dialog': 0,
+		'module': 'Setup',
+		'name': '__common__',
+		'section_style': 'Simple',
+		'server_code_error': ' ',
+		'show_in_menu': 0,
+		'version': 38
+	},
+
+	# These values are common for all DocField
+	{
+		'doctype': 'DocField',
+		'name': '__common__',
+		'parent': 'Company Group',
+		'parentfield': 'fields',
+		'parenttype': 'DocType'
+	},
+
+	# These values are common for all DocPerm
+	{
+		'amend': 0,
+		'doctype': 'DocPerm',
+		'name': '__common__',
+		'parent': 'Company Group',
+		'parentfield': 'permissions',
+		'parenttype': 'DocType',
+		'read': 1,
+		'submit': 0
+	},
+
+	# DocType, Company Group
+	{
+		'doctype': 'DocType',
+		'name': 'Company Group'
+	},
+
+	# DocPerm
+	{
+		'cancel': 0,
+		'create': 0,
+		'doctype': 'DocPerm',
+		'idx': 1,
+		'permlevel': 1,
+		'role': 'Sales Manager',
+		'write': 0
+	},
+
+	# DocPerm
+	{
+		'cancel': 0,
+		'create': 0,
+		'doctype': 'DocPerm',
+		'idx': 2,
+		'permlevel': 0,
+		'role': 'Sales Manager',
+		'write': 0
+	},
+
+	# DocPerm
+	{
+		'cancel': 0,
+		'create': 0,
+		'doctype': 'DocPerm',
+		'idx': 3,
+		'permlevel': 1,
+		'role': 'Sales Master Manager',
+		'write': 0
+	},
+
+	# DocPerm
+	{
+		'cancel': 0,
+		'create': 0,
+		'doctype': 'DocPerm',
+		'idx': 4,
+		'permlevel': 1,
+		'role': 'Sales User',
+		'write': 0
+	},
+
+	# DocPerm
+	{
+		'cancel': 0,
+		'create': 0,
+		'doctype': 'DocPerm',
+		'idx': 5,
+		'permlevel': 0,
+		'role': 'Sales User',
+		'write': 0
+	},
+
+	# DocPerm
+	{
+		'cancel': 1,
+		'create': 1,
+		'doctype': 'DocPerm',
+		'idx': 6,
+		'permlevel': 0,
+		'role': 'Sales Master Manager',
+		'write': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'trash_reason',
+		'fieldtype': 'Small Text',
+		'idx': 1,
+		'label': 'Trash Reason',
+		'oldfieldname': 'trash_reason',
+		'oldfieldtype': 'Small Text',
+		'permlevel': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'group_name',
+		'fieldtype': 'Data',
+		'idx': 2,
+		'label': 'Group Name',
+		'no_copy': 1,
+		'oldfieldname': 'customer_group_name',
+		'oldfieldtype': 'Data',
+		'permlevel': 0,
+		'reqd': 1
+	}
+]

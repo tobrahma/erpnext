@@ -5,14 +5,14 @@
 	{
 		'creation': '2010-08-08 17:08:55',
 		'docstatus': 0,
-		'modified': '2011-07-01 17:43:29',
+		'modified': '2011-07-29 16:58:33',
 		'modified_by': 'Administrator',
 		'owner': 'Administrator'
 	},
 
 	# These values are common for all DocType
 	{
-		'_last_update': '1309506817',
+		'_last_update': '1311938243',
 		'allow_trash': 1,
 		'autoname': 'field:company_name',
 		'colour': 'White:FFF',
@@ -23,7 +23,7 @@
 		'section_style': 'Tabbed',
 		'server_code_error': ' ',
 		'show_in_menu': 0,
-		'version': 93
+		'version': 100
 	},
 
 	# These values are common for all DocField
@@ -37,13 +37,11 @@
 
 	# These values are common for all DocPerm
 	{
-		'cancel': 0,
 		'doctype': 'DocPerm',
 		'name': '__common__',
 		'parent': 'Company',
 		'parentfield': 'permissions',
-		'parenttype': 'DocType',
-		'read': 1
+		'parenttype': 'DocType'
 	},
 
 	# DocType, Company
@@ -54,23 +52,21 @@
 
 	# DocPerm
 	{
-		'amend': 0,
-		'create': 1,
 		'doctype': 'DocPerm',
 		'idx': 1,
 		'permlevel': 0,
-		'role': 'System Manager',
-		'submit': 0,
-		'write': 1
+		'role': 'Sales User'
 	},
 
 	# DocPerm
 	{
 		'amend': 0,
+		'cancel': 0,
 		'create': 1,
 		'doctype': 'DocPerm',
 		'idx': 2,
 		'permlevel': 0,
+		'read': 1,
 		'role': 'System Manager',
 		'submit': 0,
 		'write': 1
@@ -78,9 +74,25 @@
 
 	# DocPerm
 	{
+		'amend': 0,
+		'cancel': 0,
+		'create': 1,
 		'doctype': 'DocPerm',
 		'idx': 3,
+		'permlevel': 0,
+		'read': 1,
+		'role': 'System Manager',
+		'submit': 0,
+		'write': 1
+	},
+
+	# DocPerm
+	{
+		'cancel': 0,
+		'doctype': 'DocPerm',
+		'idx': 4,
 		'permlevel': 1,
+		'read': 1,
 		'role': 'All'
 	},
 
@@ -129,21 +141,9 @@
 	# DocField
 	{
 		'doctype': 'DocField',
-		'fieldname': 'address',
-		'fieldtype': 'Small Text',
-		'idx': 4,
-		'label': 'Address',
-		'oldfieldname': 'address',
-		'oldfieldtype': 'Small Text',
-		'permlevel': 0
-	},
-
-	# DocField
-	{
-		'doctype': 'DocField',
 		'fieldname': 'default_currency',
 		'fieldtype': 'Select',
-		'idx': 5,
+		'idx': 4,
 		'label': 'Default Currency',
 		'options': 'link:Currency',
 		'permlevel': 0,
@@ -154,7 +154,7 @@
 	{
 		'doctype': 'DocField',
 		'fieldtype': 'Column Break',
-		'idx': 6,
+		'idx': 5,
 		'oldfieldtype': 'Column Break',
 		'permlevel': 0,
 		'width': '50%'
@@ -165,7 +165,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'phone_no',
 		'fieldtype': 'Data',
-		'idx': 7,
+		'idx': 6,
 		'label': 'Phone No',
 		'oldfieldname': 'phone_no',
 		'oldfieldtype': 'Data',
@@ -178,7 +178,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'email',
 		'fieldtype': 'Data',
-		'idx': 8,
+		'idx': 7,
 		'label': 'Email',
 		'oldfieldname': 'email',
 		'oldfieldtype': 'Data',
@@ -189,22 +189,9 @@
 	# DocField
 	{
 		'doctype': 'DocField',
-		'fieldname': 'fax',
-		'fieldtype': 'Data',
-		'idx': 9,
-		'label': 'Fax',
-		'oldfieldname': 'fax',
-		'oldfieldtype': 'Data',
-		'options': 'Phone',
-		'permlevel': 0
-	},
-
-	# DocField
-	{
-		'doctype': 'DocField',
 		'fieldname': 'website',
 		'fieldtype': 'Data',
-		'idx': 10,
+		'idx': 8,
 		'label': 'Website',
 		'oldfieldname': 'website',
 		'oldfieldtype': 'Data',
@@ -217,7 +204,7 @@
 		'description': 'Company registration numbers for your reference. Example: VAT Registration Numbers etc.',
 		'doctype': 'DocField',
 		'fieldtype': 'Section Break',
-		'idx': 11,
+		'idx': 9,
 		'label': 'Registration Info',
 		'oldfieldtype': 'Section Break',
 		'permlevel': 0,
@@ -231,7 +218,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'registration_details',
 		'fieldtype': 'Code',
-		'idx': 12,
+		'idx': 10,
 		'label': 'Registration Details',
 		'oldfieldname': 'registration_details',
 		'oldfieldtype': 'Code',
@@ -243,7 +230,7 @@
 		'depends_on': 'eval:!doc.__islocal',
 		'doctype': 'DocField',
 		'fieldtype': 'Section Break',
-		'idx': 13,
+		'idx': 11,
 		'label': 'Accounting Settings',
 		'oldfieldtype': 'Section Break',
 		'permlevel': 0
@@ -255,7 +242,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'default_bank_account',
 		'fieldtype': 'Link',
-		'idx': 14,
+		'idx': 12,
 		'label': 'Default Bank Account',
 		'no_copy': 1,
 		'oldfieldname': 'default_bank_account',
@@ -271,7 +258,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'receivables_group',
 		'fieldtype': 'Link',
-		'idx': 15,
+		'idx': 13,
 		'label': 'Receivables Group',
 		'no_copy': 1,
 		'oldfieldname': 'receivables_group',
@@ -287,7 +274,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'payables_group',
 		'fieldtype': 'Link',
-		'idx': 16,
+		'idx': 14,
 		'label': 'Payables Group',
 		'no_copy': 1,
 		'oldfieldname': 'payables_group',
@@ -301,7 +288,7 @@
 	{
 		'doctype': 'DocField',
 		'fieldtype': 'Column Break',
-		'idx': 17,
+		'idx': 15,
 		'oldfieldtype': 'Column Break',
 		'permlevel': 0,
 		'width': '50%'
@@ -314,7 +301,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'yearly_bgt_flag',
 		'fieldtype': 'Select',
-		'idx': 18,
+		'idx': 16,
 		'label': 'If Yearly Budget Exceeded',
 		'oldfieldname': 'yearly_bgt_flag',
 		'oldfieldtype': 'Select',
@@ -328,7 +315,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'monthly_bgt_flag',
 		'fieldtype': 'Select',
-		'idx': 19,
+		'idx': 17,
 		'label': 'If Monthly Budget Exceeded',
 		'oldfieldname': 'monthly_bgt_flag',
 		'oldfieldtype': 'Select',
@@ -342,7 +329,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'credit_days',
 		'fieldtype': 'Int',
-		'idx': 20,
+		'idx': 18,
 		'label': 'Credit Days',
 		'oldfieldname': 'credit_days',
 		'oldfieldtype': 'Int',
@@ -355,7 +342,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'credit_limit',
 		'fieldtype': 'Currency',
-		'idx': 21,
+		'idx': 19,
 		'label': 'Credit Limit',
 		'oldfieldname': 'credit_limit',
 		'oldfieldtype': 'Currency',
@@ -367,11 +354,207 @@
 		'doctype': 'DocField',
 		'fieldname': 'trash_reason',
 		'fieldtype': 'Small Text',
-		'idx': 22,
+		'idx': 20,
 		'label': 'Trash Reason',
 		'no_copy': 1,
 		'oldfieldname': 'trash_reason',
 		'oldfieldtype': 'Small Text',
 		'permlevel': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Section Break',
+		'idx': 21,
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Column Break',
+		'idx': 22,
+		'permlevel': 0,
+		'width': '50%'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'company_relation',
+		'fieldtype': 'Select',
+		'idx': 23,
+		'label': 'Company Relation',
+		'options': '\nSelf\nCustomer\nSupplier\nSales Partner',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'naming_series',
+		'fieldtype': 'Select',
+		'idx': 24,
+		'label': 'Naming Series',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'letter_head',
+		'fieldtype': 'Select',
+		'idx': 25,
+		'label': 'Letter Head',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'default_sales_partner',
+		'fieldtype': 'Link',
+		'idx': 26,
+		'label': 'Default Sales Partner',
+		'options': 'Company',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Column Break',
+		'idx': 27,
+		'permlevel': 0,
+		'width': '50%'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'default_commision_rate',
+		'fieldtype': 'Currency',
+		'idx': 28,
+		'label': 'Default Commision Rate',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'territory',
+		'fieldtype': 'Link',
+		'idx': 29,
+		'label': 'Territory',
+		'options': 'Territory',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'is_individual',
+		'fieldtype': 'Check',
+		'idx': 30,
+		'label': 'Is Individual',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'company_group',
+		'fieldtype': 'Link',
+		'idx': 31,
+		'label': 'Company Group',
+		'options': 'Company Group',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'colour': 'White:FFF',
+		'depends_on': "eval:doc.company_relation=='Customer'",
+		'doctype': 'DocField',
+		'fieldname': 'lead_name',
+		'fieldtype': 'Link',
+		'idx': 32,
+		'label': 'Lead Name',
+		'options': 'Lead',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Section Break',
+		'idx': 33,
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'default_sales_person',
+		'fieldtype': 'Table',
+		'idx': 34,
+		'label': 'Default Sales Person',
+		'options': 'Sales Team',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Section Break',
+		'idx': 35,
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'sales_target_details',
+		'fieldtype': 'Table',
+		'idx': 36,
+		'label': 'Sales Target Details',
+		'options': 'Target Detail',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Section Break',
+		'idx': 37,
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'HTML',
+		'idx': 38,
+		'label': 'Address Display',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Column Break',
+		'idx': 39,
+		'permlevel': 0,
+		'width': '50%'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'HTML',
+		'idx': 40,
+		'label': 'Contact Display',
+		'permlevel': 0
 	}
 ]
