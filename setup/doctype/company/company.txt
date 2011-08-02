@@ -5,14 +5,14 @@
 	{
 		'creation': '2010-08-08 17:08:55',
 		'docstatus': 0,
-		'modified': '2011-08-02 12:40:21',
+		'modified': '2011-08-02 14:12:43',
 		'modified_by': 'Administrator',
 		'owner': 'Administrator'
 	},
 
 	# These values are common for all DocType
 	{
-		'_last_update': '1312268966',
+		'_last_update': '1312273007',
 		'allow_trash': 1,
 		'autoname': 'field:company_name',
 		'colour': 'White:FFF',
@@ -23,7 +23,7 @@
 		'section_style': 'Tabbed',
 		'server_code_error': ' ',
 		'show_in_menu': 0,
-		'version': 135
+		'version': 142
 	},
 
 	# These values are common for all DocField
@@ -142,7 +142,7 @@
 	# DocField
 	{
 		'colour': 'White:FFF',
-		'depends_on': "eval:inList(['Customer', 'Supplier', 'Sales Partner'], doc.company_relation)",
+		'depends_on': "eval:inList(['Customer', 'Supplier'], doc.company_relation)",
 		'doctype': 'DocField',
 		'fieldname': 'naming_series',
 		'fieldtype': 'Select',
@@ -296,7 +296,6 @@
 	# DocField
 	{
 		'colour': 'White:FFF',
-		'depends_on': 'eval:!doc.__islocal',
 		'doctype': 'DocField',
 		'fieldtype': 'Section Break',
 		'idx': 18,
@@ -317,6 +316,7 @@
 	# DocField
 	{
 		'colour': 'White:FFF',
+		'depends_on': "eval:inList(['Self', 'Customer', 'Supplier'], doc.company_relation)",
 		'doctype': 'DocField',
 		'fieldname': 'default_currency',
 		'fieldtype': 'Select',
@@ -330,11 +330,23 @@
 	# DocField
 	{
 		'colour': 'White:FFF',
+		'depends_on': "eval:doc.company_relation=='Self'",
+		'doctype': 'DocField',
+		'fieldname': 'letter_head',
+		'fieldtype': 'Select',
+		'idx': 21,
+		'label': 'Letter Head',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'colour': 'White:FFF',
 		'depends_on': "eval:!doc.__islocal && doc.company_relation=='Self'",
 		'doctype': 'DocField',
 		'fieldname': 'default_bank_account',
 		'fieldtype': 'Link',
-		'idx': 21,
+		'idx': 22,
 		'label': 'Default Bank Account',
 		'no_copy': 1,
 		'oldfieldname': 'default_bank_account',
@@ -351,7 +363,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'receivables_group',
 		'fieldtype': 'Link',
-		'idx': 22,
+		'idx': 23,
 		'label': 'Receivables Group',
 		'no_copy': 1,
 		'oldfieldname': 'receivables_group',
@@ -368,7 +380,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'payables_group',
 		'fieldtype': 'Link',
-		'idx': 23,
+		'idx': 24,
 		'label': 'Payables Group',
 		'no_copy': 1,
 		'oldfieldname': 'payables_group',
@@ -385,7 +397,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'default_sales_partner',
 		'fieldtype': 'Link',
-		'idx': 24,
+		'idx': 25,
 		'label': 'Default Sales Partner',
 		'options': "Company\ncompany_relation = 'Sales Partner'",
 		'permlevel': 0
@@ -398,7 +410,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'default_commision_rate',
 		'fieldtype': 'Currency',
-		'idx': 25,
+		'idx': 26,
 		'label': 'Default Commision Rate',
 		'permlevel': 0
 	},
@@ -410,7 +422,7 @@
 		'doctype': 'DocField',
 		'fieldname': 'lead_ref',
 		'fieldtype': 'Link',
-		'idx': 26,
+		'idx': 27,
 		'label': 'Lead Ref',
 		'options': 'Lead',
 		'permlevel': 0
@@ -420,22 +432,10 @@
 	{
 		'doctype': 'DocField',
 		'fieldtype': 'Column Break',
-		'idx': 27,
+		'idx': 28,
 		'oldfieldtype': 'Column Break',
 		'permlevel': 0,
 		'width': '50%'
-	},
-
-	# DocField
-	{
-		'colour': 'White:FFF',
-		'depends_on': "eval:doc.company_relation=='Self'",
-		'doctype': 'DocField',
-		'fieldname': 'letter_head',
-		'fieldtype': 'Select',
-		'idx': 28,
-		'label': 'Letter Head',
-		'permlevel': 0
 	},
 
 	# DocField
@@ -471,7 +471,7 @@
 	# DocField
 	{
 		'colour': 'White:FFF',
-		'depends_on': "eval:doc.company_relation=='Customer'",
+		'depends_on': "eval:inList(['Customer', 'Sales Partner'], doc.company_relation)",
 		'doctype': 'DocField',
 		'fieldname': 'territory',
 		'fieldtype': 'Link',
@@ -484,6 +484,7 @@
 	# DocField
 	{
 		'colour': 'White:FFF',
+		'depends_on': "eval:inList(['Self', 'Customer', 'Supplier'], doc.company_relation)",
 		'doctype': 'DocField',
 		'fieldname': 'credit_days',
 		'fieldtype': 'Int',
@@ -497,6 +498,7 @@
 	# DocField
 	{
 		'colour': 'White:FFF',
+		'depends_on': "eval:inList(['Self', 'Customer', 'Supplier'], doc.company_relation)",
 		'doctype': 'DocField',
 		'fieldname': 'credit_limit',
 		'fieldtype': 'Currency',
