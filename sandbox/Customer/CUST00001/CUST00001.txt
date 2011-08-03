@@ -1,0 +1,30 @@
+# Customer, CUST00001
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2011-07-15 11:30:57',
+		'docstatus': 0,
+		'modified': '2011-07-15 11:30:57',
+		'modified_by': 'Administrator',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all Customer
+	{
+		'company': 'Sandbox Company',
+		'customer_group': 'Default Customer Group',
+		'customer_name': 'Billy Auto Pvt. Ltd.',
+		'customer_type': 'Company',
+		'doctype': 'Customer',
+		'name': '__common__',
+		'naming_series': 'CUST',
+		'territory': 'Default'
+	},
+
+	# Customer, CUST00001
+	{
+		'doctype': 'Customer',
+		'name': 'CUST00001'
+	}
+]
