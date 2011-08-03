@@ -3,11 +3,11 @@
 
 	# These values are common in all dictionaries
 	{
-		'creation': '2011-07-26 18:11:47',
+		'creation': '2011-08-02 15:28:41',
 		'docstatus': 0,
-		'modified': '2011-07-26 18:27:01',
-		'modified_by': 'Administrator',
-		'owner': 'Administrator'
+		'modified': '2011-08-02 15:28:41',
+		'modified_by': 'Guest',
+		'owner': 'Guest'
 	},
 
 	# These values are common for all Search Criteria

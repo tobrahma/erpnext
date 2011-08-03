@@ -2,16 +2,13 @@ import unittest
 import webnotes
 from webnotes.model.code import get_obj
 
-class TestScheduleGeneartion(unittest.TestCase):
+class TestCompany(unittest.TestCase):
 	def setUp(self):
 		webnotes.conn.begin()
 		# create a mock customer
-		self.cust = 
-		
-	def test_generation(self):
-		"test the genaration of loan installments"
-		self.loan.generate()
-		self.assertEqual(self.loan.get_installment_total(), self.loan.doc.loan_amount)
-		
+
+	def test_account_creation(self):
+
+
 	def tearDown(self):
 		webnotes.conn.rollback()

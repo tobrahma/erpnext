@@ -5,7 +5,7 @@
 	{
 		'creation': '2010-09-25 10:50:34',
 		'docstatus': 0,
-		'modified': '2011-07-28 12:01:10',
+		'modified': '2011-08-02 15:35:55',
 		'modified_by': 'Administrator',
 		'owner': 'Administrator'
 	},
@@ -34,14 +34,14 @@
 		'doctype': 'Module Def',
 		'doctype_list': 'GL Mapper, Journal Voucher\nGL Mapper, Payable Voucher\nGL Mapper, Receivable Voucher\nDocType Label, Receivable Voucher\nDocType Label, Payable Voucher',
 		'file_list': 'finance.gif,FileData/00210',
-		'is_hidden': 'No',
 		'last_updated_date': '2010-12-08 10:13:30',
 		'module_desc': 'Data about your payables, receivables and books of accounts',
 		'module_icon': 'Accounts.gif',
 		'module_label': 'Accounts',
 		'module_name': 'Accounts',
-		'module_seq': 3,
-		'name': '__common__'
+		'module_seq': 5,
+		'name': '__common__',
+		'widget_code': "var acc_set_tips = function() {\n  $c_obj('Module Tip Control', 'get_tip', 'accounts', function(r,rt) { \n    if(r.message) {\n      $(parent.tip_area).html('<b>Tip: </b>' + r.message).css('display','block');\n    }\n  } );\n}\n\nacc_set_tips();"
 	},
 
 	# Module Def, Accounts
