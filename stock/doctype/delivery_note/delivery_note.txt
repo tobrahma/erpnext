@@ -5,7 +5,7 @@
 	{
 		'creation': '2011-04-18 15:58:20',
 		'docstatus': 0,
-		'modified': '2011-09-07 17:36:34',
+		'modified': '2011-09-09 14:56:16',
 		'modified_by': 'Administrator',
 		'owner': 'Administrator'
 	},
@@ -37,7 +37,7 @@
 		'show_in_menu': 0,
 		'subject': 'To %(customer_name)s on %(transaction_date)s | %(per_billed)s% billed',
 		'tag_fields': 'billing_status',
-		'version': 450
+		'version': 451
 	},
 
 	# These values are common for all DocFormat
@@ -126,11 +126,6 @@
 		'doctype': 'DocPerm',
 		'permlevel': 2,
 		'role': 'All'
-	},
-
-	# DocFormat
-	{
-		'doctype': 'DocFormat'
 	},
 
 	# DocFormat

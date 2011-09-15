@@ -55,7 +55,7 @@ if not account:
 
 acc_det = sql("select debit_or_credit, is_pl_account, lft, rgt, group_or_ledger from tabAccount where name = '%s'" % account)
 
-opening_bal = get_obj('GL Control').get_as_on_balance(account, from_date_year, from_date, acc_det[0][0], acc_det[0][2], acc_det[0][3])[2]
+opening_bal = get_obj('GL Control').get_as_on_balance(account, from_date_year, add_days(from_date,-1), acc_det[0][0], acc_det[0][2], acc_det[0][3])[2]
 closing_bal = get_obj('GL Control').get_as_on_balance(account, from_date_year, to_date, acc_det[0][0], acc_det[0][2], acc_det[0][3])[2]
 if acc_det[0][0] == 'Credit':
   closing_bal = -1*closing_bal
