@@ -3,10 +3,33 @@ import webnotes
 
 from webnotes.model.doc import Document
 from webnotes.model.code import get_obj
+from webnotes.utils import flt
+
 sql = webnotes.conn.sql
 
-cols = ['status','description','grade','naming_series','item_code','item_name','item_group','is_stock_item','stock_uom','default_warehouse','docstatus']
-rows = [['0','Gel Ink',''],
-	[],
-	[],
+
+class TestItem(unittest.TestCase):
+	def setUp(self):
+		webnotes.conn.begin()
+
+	def tearDown(self):
+		webnotes.conn.rollback()
+		
+	def test_insert(self):
+		count_before =  flt(sql("select count(*) from tabItem")[0][0])
+		for i in items:
+			i.save(1)
+			count_after = flt(sql("select count(*) from tabItem")[0][0])
+		self.assertTrue(count_before+3==count_after)
+
+
+cols = ['docstatus','description','item_code','item_name','item_group','is_stock_item','stock_uom','default_warehouse']
+rows = [['0','Gel Ink','GELINK','Gel Ink','Ink','Yes','Nos',None],
+	['0','Gel Refill','GELREF','Gel Refill','Refill','Yes','Nos',None],
+	['0','Gel Pen','GELPEN','Gel Pen','Pen','Yes','Nos',None]
 	]
+tabItem = [dict(zip(cols[0::1],row[0::1])) for row in rows]
+for i in tabItem:
+	i['doctype']='Item'
+
+items = [Document(fielddata=r) for r in tabItem]
