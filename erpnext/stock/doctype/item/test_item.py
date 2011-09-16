@@ -22,14 +22,14 @@ class TestItem(unittest.TestCase):
 			count_after = flt(sql("select count(*) from tabItem")[0][0])
 		self.assertTrue(count_before+3==count_after)
 
-
+# Test Data
 cols = ['docstatus','description','item_code','item_name','item_group','is_stock_item','stock_uom','default_warehouse']
 rows = [['0','Gel Ink','GELINK','Gel Ink','Ink','Yes','Nos',None],
 	['0','Gel Refill','GELREF','Gel Refill','Refill','Yes','Nos',None],
 	['0','Gel Pen','GELPEN','Gel Pen','Pen','Yes','Nos',None]
 	]
 tabItem = [dict(zip(cols[0::1],row[0::1])) for row in rows]
-for i in tabItem:
-	i['doctype']='Item'
+
+for i in tabItem: i['doctype']='Item'
 
 items = [Document(fielddata=r) for r in tabItem]
