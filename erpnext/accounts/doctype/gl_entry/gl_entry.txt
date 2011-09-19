@@ -5,14 +5,14 @@
 	{
 		'creation': '2010-08-08 17:09:03',
 		'docstatus': 0,
-		'modified': '2010-12-29 12:59:45',
-		'modified_by': 'umair@iwebnotes.com',
+		'modified': '2011-09-19 07:37:30',
+		'modified_by': 'Administrator',
 		'owner': 'Administrator'
 	},
 
 	# These values are common for all DocType
 	{
-		'_last_update': '1309508838',
+		'_last_update': '1313485456',
 		'autoname': 'GL.#######',
 		'colour': 'White:FFF',
 		'doctype': 'DocType',
@@ -22,7 +22,7 @@
 		'section_style': 'Simple',
 		'server_code_error': ' ',
 		'show_in_menu': 0,
-		'version': 101
+		'version': 102
 	},
 
 	# These values are common for all DocField
@@ -68,7 +68,6 @@
 		'cancel': 0,
 		'create': 0,
 		'doctype': 'DocPerm',
-		'idx': 1,
 		'permlevel': 0,
 		'role': 'Accounts Manager',
 		'submit': 0,
@@ -78,7 +77,6 @@
 	# DocPerm
 	{
 		'doctype': 'DocPerm',
-		'idx': 2,
 		'permlevel': 0,
 		'role': 'System Manager'
 	},
@@ -89,7 +87,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'posting_date',
 		'fieldtype': 'Date',
-		'idx': 1,
 		'in_filter': 1,
 		'label': 'Posting Date',
 		'oldfieldname': 'posting_date',
@@ -103,7 +100,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'transaction_date',
 		'fieldtype': 'Date',
-		'idx': 2,
 		'label': 'Transaction Date',
 		'oldfieldname': 'transaction_date',
 		'oldfieldtype': 'Date'
@@ -114,12 +110,11 @@
 		'doctype': 'DocField',
 		'fieldname': 'aging_date',
 		'fieldtype': 'Date',
-		'idx': 3,
 		'in_filter': 1,
 		'label': 'Aging Date',
 		'oldfieldname': 'aging_date',
 		'oldfieldtype': 'Date',
-		'search_index': 0
+		'search_index': 1
 	},
 
 	# DocField
@@ -127,7 +122,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'account',
 		'fieldtype': 'Link',
-		'idx': 4,
 		'in_filter': 1,
 		'label': 'Account',
 		'oldfieldname': 'account',
@@ -141,7 +135,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'cost_center',
 		'fieldtype': 'Link',
-		'idx': 5,
 		'in_filter': 1,
 		'label': 'Cost Center',
 		'oldfieldname': 'cost_center',
@@ -155,7 +148,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'debit',
 		'fieldtype': 'Currency',
-		'idx': 6,
 		'label': 'Debit Amt',
 		'oldfieldname': 'debit',
 		'oldfieldtype': 'Currency'
@@ -166,7 +158,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'credit',
 		'fieldtype': 'Currency',
-		'idx': 7,
 		'label': 'Credit Amt',
 		'oldfieldname': 'credit',
 		'oldfieldtype': 'Currency'
@@ -177,7 +168,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'against',
 		'fieldtype': 'Text',
-		'idx': 8,
 		'in_filter': 1,
 		'label': 'Against',
 		'oldfieldname': 'against',
@@ -189,7 +179,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'against_voucher',
 		'fieldtype': 'Data',
-		'idx': 9,
 		'in_filter': 1,
 		'label': 'Against Voucher',
 		'oldfieldname': 'against_voucher',
@@ -202,7 +191,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'against_voucher_type',
 		'fieldtype': 'Data',
-		'idx': 10,
 		'in_filter': 0,
 		'label': 'Against Voucher Type',
 		'oldfieldname': 'against_voucher_type',
@@ -215,13 +203,12 @@
 		'doctype': 'DocField',
 		'fieldname': 'voucher_type',
 		'fieldtype': 'Select',
-		'idx': 11,
 		'in_filter': 1,
 		'label': 'Voucher Type',
 		'oldfieldname': 'voucher_type',
 		'oldfieldtype': 'Select',
 		'options': 'Journal Voucher\nReceivable Voucher\nPayable Voucher',
-		'search_index': 0
+		'search_index': 1
 	},
 
 	# DocField
@@ -229,7 +216,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'voucher_no',
 		'fieldtype': 'Data',
-		'idx': 12,
 		'in_filter': 1,
 		'label': 'Voucher No',
 		'oldfieldname': 'voucher_no',
@@ -242,7 +228,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'remarks',
 		'fieldtype': 'Text',
-		'idx': 13,
 		'in_filter': 1,
 		'label': 'Remarks',
 		'no_copy': 1,
@@ -256,13 +241,12 @@
 		'doctype': 'DocField',
 		'fieldname': 'is_cancelled',
 		'fieldtype': 'Select',
-		'idx': 14,
 		'in_filter': 1,
 		'label': 'Is Cancelled',
 		'oldfieldname': 'is_cancelled',
 		'oldfieldtype': 'Select',
 		'options': 'No\nYes',
-		'search_index': 0
+		'search_index': 1
 	},
 
 	# DocField
@@ -270,13 +254,12 @@
 		'doctype': 'DocField',
 		'fieldname': 'is_opening',
 		'fieldtype': 'Select',
-		'idx': 15,
 		'in_filter': 1,
 		'label': 'Is Opening',
 		'oldfieldname': 'is_opening',
 		'oldfieldtype': 'Select',
 		'options': 'No\nYes',
-		'search_index': 0
+		'search_index': 1
 	},
 
 	# DocField
@@ -284,7 +267,6 @@
 		'doctype': 'DocField',
 		'fieldname': 'is_advance',
 		'fieldtype': 'Select',
-		'idx': 16,
 		'in_filter': 0,
 		'label': 'Is Advance',
 		'oldfieldname': 'is_advance',
@@ -298,13 +280,12 @@
 		'doctype': 'DocField',
 		'fieldname': 'fiscal_year',
 		'fieldtype': 'Select',
-		'idx': 17,
 		'in_filter': 1,
 		'label': 'Fiscal Year',
 		'oldfieldname': 'fiscal_year',
 		'oldfieldtype': 'Select',
 		'options': 'link:Fiscal Year',
-		'search_index': 0
+		'search_index': 1
 	},
 
 	# DocField
@@ -312,12 +293,27 @@
 		'doctype': 'DocField',
 		'fieldname': 'company',
 		'fieldtype': 'Link',
-		'idx': 18,
 		'in_filter': 1,
 		'label': 'Company',
 		'oldfieldname': 'company',
 		'oldfieldtype': 'Link',
 		'options': 'Company',
-		'search_index': 0
+		'search_index': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'amount',
+		'fieldtype': 'Currency',
+		'label': 'Amount'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'closing_balance',
+		'fieldtype': 'Currency',
+		'label': 'Closing Balance'
 	}
 ]
