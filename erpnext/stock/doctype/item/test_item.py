@@ -2,6 +2,7 @@ import unittest
 import webnotes
 import copy
 
+from webnotes.model.doclist import DocList
 from webnotes.model.doc import Document
 from webnotes.model.code import get_obj
 from webnotes.utils import flt
@@ -36,6 +37,11 @@ class TestItem(unittest.TestCase):
 		Document(fielddata=fitem).save(1)
 		self.assertRaises(webnotes.ValidationError)
 
+d = Doclist()
+Rushabh M. 	
+d.docs = [doc]
+Rushabh M. 	
+d.save()
 """
 	def test_dependency(self):
 		itemsFail[0].save(1)
@@ -49,7 +55,8 @@ rows = [['0','Gel Ink','GELINK','Gel Ink','Ink','Yes','Nos',None],
 	['0','Gel Pen','GELPEN','Gel Pen','Pen','Yes','Nos',None]
 	]
 
-fail = [['0','F Ink',None,'F Ink','F Ink','No','Nos',None]
+fail = [['0','F Ink',None,'F Ink','F Ink','No','Nos',None],
+	['0','F Ink',None,'F Ink','F Ink','No','Nos',None]
 	]
 
 tabItem = [dict(zip(cols[0::1],row[0::1])) for row in rows]
