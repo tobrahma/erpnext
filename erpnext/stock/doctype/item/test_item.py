@@ -24,6 +24,7 @@ class TestItem(unittest.TestCase):
 		for i in items:
 			d.doc = i
 			d.children = None
+			d.doc.fields['__islocal']=1
 			d.save(1)
 		count_after = flt(sql("select count(*) from tabItem")[0][0])
 		self.assertTrue(count_before+3==count_after)
@@ -33,10 +34,8 @@ class TestItem(unittest.TestCase):
 			d = DocList()
 			d.doc = itemsFail[0]
 			d.children = None
-			count_before =  flt(sql("select count(*) from tabItem")[0][0])
+			d.doc.fields['__islocal']=1
 			d.save(1)
-			count_after = flt(sql("select count(*) from tabItem")[0][0])
-			print [count_before,count_after]
 
 # Test Data
 
