@@ -1,7 +1,7 @@
 # REMEMBER to update this
 # ========================
 
-last_patch = 368
+last_patch = 369
 
 #-------------------------------------------
 
@@ -349,3 +349,7 @@ def execute(patch_no):
 	elif patch_no == 368:
 		sql("update tabDocPerm set amend = 0 where parent = 'Salary Structure'")
 		sql("update tabDocPerm set cancel = 1 where parent = 'Company' and role = 'System Manager'")
+	elif patch_no == 369:
+		# Patch for adding packing related columns (packed by, checked by, shipping mark etc)
+		reload_doc('stock','doctype','delivery_note')
+
