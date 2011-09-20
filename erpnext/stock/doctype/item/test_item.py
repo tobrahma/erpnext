@@ -39,17 +39,16 @@ class TestItem(unittest.TestCase):
 			print [count_before,count_after]
 
 # Test Data
-cols = ['docstatus','description','item_code','item_name','item_group','is_stock_item','stock_uom','default_warehouse','is_manufactured_item','is_purchase_item','is_sub_contracted_item','is_pro_applicable']
-rows = [['0','Gel Ink','GELINK','Gel Ink','Ink','Yes','Nos',None,None,None,None,'No'],
-	['0','Gel Refill','GELREF','Gel Refill','Refill','Yes','Nos',None,None,None,None,'No'],
-	['0','Gel Pen','GELPEN','Gel Pen','Pen','Yes','Nos',None,None,None,None,'No']
-	]
 
-fail = [['0','F Ink',None,'F Ink','F Ink','No','Nos',None,None,None,None,None]
-	]
+tabItem = [
+		{'is_purchase_item': None, 'is_pro_applicable': 'No', 'is_manufactured_item': None, 'description': 'Gel Ink', 'default_warehouse': None, 'item_name': 'Gel Ink', 'item_group': 'Ink', 'item_code': 'GELINK', 'is_sub_contracted_item': None, 'is_stock_item': 'Yes', 'stock_uom': 'Nos', 'docstatus': '0'}, 
+		{'is_purchase_item': None, 'is_pro_applicable': 'No', 'is_manufactured_item': None, 'description': 'Gel Refill', 'default_warehouse': None, 'item_name': 'Gel Refill', 'item_group': 'Refill', 'item_code': 'GELREF', 'is_sub_contracted_item': None, 'is_stock_item': 'Yes', 'stock_uom': 'Nos', 'docstatus': '0'}, 
+		{'is_purchase_item': None, 'is_pro_applicable': 'No', 'is_manufactured_item': None, 'description': 'Gel Pen', 'default_warehouse': None, 'item_name': 'Gel Pen', 'item_group': 'Pen', 'item_code': 'GELPEN', 'is_sub_contracted_item': None, 'is_stock_item': 'Yes', 'stock_uom': 'Nos', 'docstatus': '0'}
+	  ]
 
-tabItem = [dict(zip(cols[0::1],row[0::1])) for row in rows]
-tabItemFail = [dict(zip(cols[0::1],row[0::1])) for row in rows]
+tabItemFail = [
+		{'is_purchase_item': None, 'is_pro_applicable': None, 'is_manufactured_item': None, 'description': 'F Ink', 'default_warehouse': None, 'item_name': 'F Ink', 'item_group': 'F Ink', 'item_code': None, 'is_sub_contracted_item': None, 'is_stock_item': 'No', 'stock_uom': 'Nos', 'docstatus': '0'}
+	      ]
 
 for i in tabItem: i['doctype']='Item'
 for i in tabItemFail: i['doctype']='Item'
