@@ -2,7 +2,7 @@ drop trigger if exists before_insert_gle_amount_cb;
 delimiter $$
 CREATE TRIGGER before_insert_gle_amount_cb BEFORE insert ON `tabGL Entry` FOR EACH ROW
 BEGIN
-	set NEW.amount := ifnull(NEW.credit,0)-ifnull(NEW.debit,0);
+	set NEW.amount := ifnull(NEW.debit,0)-ifnull(NEW.credit,0);
 END$$
 delimiter ;
 
@@ -26,7 +26,7 @@ drop trigger before_update_gle_amount_cb;
 delimiter $$
 CREATE TRIGGER before_update_gle_amount_cb BEFORE update ON `tabGL Entry` FOR EACH ROW
 BEGIN
-	set NEW.amount := ifnull(NEW.credit,0)-ifnull(NEW.debit,0);
+	set NEW.amount := ifnull(NEW.debit,0)-ifnull(NEW.credit,0);
 END$$
 delimiter ;
 

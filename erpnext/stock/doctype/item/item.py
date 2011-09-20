@@ -127,7 +127,7 @@ class DocType:
 			self.doc.min_order_qty = 0
 		self.check_non_asset_warehouse()
 
-		if self.doc.is_pro_applicable == 'Yes' and self.doc.is_manufactured_item != 'Yes':
+		if self.doc.is_pro_applicable and self.doc.is_pro_applicable == 'Yes' and self.doc.is_manufactured_item and self.doc.is_manufactured_item != 'Yes':
 			msgprint("If making Production Order is allowed then, it should also allow to make Bill of Materials. Refer Manufacturing section.")
 			raise Exception
 
