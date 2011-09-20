@@ -45,7 +45,7 @@ rows = [['0','Gel Ink','GELINK','Gel Ink','Ink','Yes','Nos',None,None,None,None,
 	['0','Gel Pen','GELPEN','Gel Pen','Pen','Yes','Nos',None,None,None,None,'No']
 	]
 
-fail = [['0','F Ink','fink','F Ink','F Ink','No','Nos',None,None,None,None,None]
+fail = [['0','F Ink',None,'F Ink','F Ink','No','Nos',None,None,None,None,None]
 	]
 
 tabItem = [dict(zip(cols[0::1],row[0::1])) for row in rows]
