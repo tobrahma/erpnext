@@ -139,7 +139,7 @@ class DocType:
 			elif purpose == 'Sales Return':
 				sql("update `tabSerial No` set status = 'Delivered', purchase_document_type = '', purchase_document_no = '' where name = '%s'" % serial_no)
 			else:
-				sql("update `tabSerial No` set docstatus = 2, status = 'Not in Use', purchase_document_type = '', purchase_document_no = '', purchase_date = '', purchase_rate = '', supplier = null, supplier_name = '', supplier_address = '', warehouse = '' where name = '%s'" % serial_no)
+				sql("update `tabSerial No` set docstatus = 2, status = 'Not in Use', purchase_document_type = '', purchase_document_no = '', purchase_date = null, purchase_rate = 0, supplier = null, supplier_name = '', supplier_address = '', warehouse = '' where name = '%s'" % serial_no)
 
 
 	# -------------------------------
@@ -185,7 +185,7 @@ class DocType:
 			self.check_serial_no_exists(serial_no, d.item_code)
 			self.set_delivery_serial_no_values(obj, serial_no)
 		else:
-			sql("update `tabSerial No` set docstatus = 0, status = 'In Store', delivery_document_type = '', delivery_document_no = '', delivery_date = '', customer = null, customer_name = '', delivery_address = '', territory = null where name = '%s'" % (serial_no))
+			sql("update `tabSerial No` set docstatus = 0, status = 'In Store', delivery_document_type = '', delivery_document_no = '', delivery_date = null, customer = null, customer_name = '', delivery_address = '', territory = null where name = '%s'" % (serial_no))
 
 
 	# ---------------------

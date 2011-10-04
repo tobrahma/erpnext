@@ -1,7 +1,11 @@
 # REMEMBER to update this
 # ========================
 
+<<<<<<< HEAD
 last_patch = 369
+=======
+last_patch = 374
+>>>>>>> a970b11cfb1a0d31f08ba9490edda3c99f9460f9
 
 #-------------------------------------------
 
@@ -347,9 +351,49 @@ def execute(patch_no):
 			prev_sle = bobj.get_prev_sle(posting_date = '2011-09-01', posting_time = '01:00')
 			bobj.update_item_valuation(posting_date = '2011-09-01', posting_time = '01:00', prev_sle = prev_sle)
 	elif patch_no == 368:
+		from webnotes.utils import nestedset
+		t = [
+			['Account', 'parent_account'], ['Cost Center', 'parent_cost_center'], 
+			['Item Group', 'parent_item_group'], ['Territory', 'parent_territory'],
+			['Customer Group', 'parent_customer_group'], ['Sales Person', 'parent_sales_person']
+		]
+		for d in t:
+			nestedset.rebuild_tree(d[0], d[1])
+	elif patch_no == 369:
+		reload_doc('hr', 'doctype', 'appraisal')
+		reload_doc('hr', 'doctype', 'appraisal_detail')
+	elif patch_no == 370:
+		sql("update `tabDocField` set `hidden` = 0 where fieldname = 'group_or_ledger' and parent = 'Cost Center'")
+	elif patch_no == 371:
+		comp = sql("select name from tabCompany where docstatus!=2")
+		fy = sql("select name from `tabFiscal Year` order by year_start_date asc")
+		for c in comp:
+			prev_fy = ''
+			for f in fy:
+				fy_obj = get_obj('Fiscal Year', f[0])
+				fy_obj.doc.past_year = prev_fy
+				fy_obj.doc.company = c[0]
+				fy_obj.doc.save()
+				fy_obj.repost()
+				prev_fy = f[0]
+				sql("commit")
+				sql("start transaction")
+	elif patch_no == 372:
 		sql("update tabDocPerm set amend = 0 where parent = 'Salary Structure'")
 		sql("update tabDocPerm set cancel = 1 where parent = 'Company' and role = 'System Manager'")
+<<<<<<< HEAD
 	elif patch_no == 369:
 		# Patch for adding packing related columns (packed by, checked by, shipping mark etc)
 		reload_doc('stock','doctype','delivery_note')
 
+=======
+	elif patch_no == 373:
+		if sql("select count(name) from `tabDocField` where label = 'View Ledger Entry' and parent = 'Journal Voucher' and fieldtype = 'Button'")[0][0] > 1:
+			sql("delete from `tabDocField` where label = 'View Ledger Entry' and parent = 'Journal Voucher' and fieldtype = 'Button' limit 1")
+		if sql("select count(name) from `tabDocField` where label = 'Get Balance' and parent = 'Journal Voucher' and fieldtype = 'Button'")[0][0] > 1:
+			sql("delete from `tabDocField` where label = 'Get Balance' and parent = 'Journal Voucher' and fieldtype = 'Button' limit 1")
+	elif patch_no == 374:
+		reload_doc('accounts', 'doctype', 'internal_reconciliation')
+		reload_doc('accounts', 'doctype', 'ir_payment_detail')
+		reload_doc('accounts', 'Module Def', 'Accounts')
+>>>>>>> a970b11cfb1a0d31f08ba9490edda3c99f9460f9

@@ -1,0 +1,160 @@
+# DocType, Service Agreement
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2011-10-04 13:01:05',
+		'docstatus': 0,
+		'modified': '2011-10-04 14:53:36',
+		'modified_by': 'Administrator',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all DocType
+	{
+		'_last_update': '1317720179',
+		'colour': 'White:FFF',
+		'doctype': 'DocType',
+		'module': 'Selling',
+		'name': '__common__',
+		'section_style': 'Simple',
+		'show_in_menu': 0,
+		'version': 4
+	},
+
+	# These values are common for all DocField
+	{
+		'doctype': 'DocField',
+		'name': '__common__',
+		'parent': 'Service Agreement',
+		'parentfield': 'fields',
+		'parenttype': 'DocType',
+		'permlevel': 0
+	},
+
+	# These values are common for all DocPerm
+	{
+		'doctype': 'DocPerm',
+		'name': '__common__',
+		'parent': 'Service Agreement',
+		'parentfield': 'permissions',
+		'parenttype': 'DocType'
+	},
+
+	# DocType, Service Agreement
+	{
+		'doctype': 'DocType',
+		'name': 'Service Agreement'
+	},
+
+	# DocPerm
+	{
+		'amend': 1,
+		'cancel': 0,
+		'create': 1,
+		'doctype': 'DocPerm',
+		'permlevel': 0,
+		'read': 1,
+		'role': 'Sales User',
+		'submit': 0,
+		'write': 1
+	},
+
+	# DocPerm
+	{
+		'cancel': 1,
+		'doctype': 'DocPerm',
+		'permlevel': 1,
+		'role': 'Sales User',
+		'submit': 1
+	},
+
+	# DocPerm
+	{
+		'amend': 1,
+		'cancel': 1,
+		'create': 1,
+		'doctype': 'DocPerm',
+		'execute': 1,
+		'permlevel': 0,
+		'read': 1,
+		'role': 'System Manager',
+		'submit': 1,
+		'write': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'naming_series',
+		'fieldtype': 'Select',
+		'label': 'Series',
+		'options': '\nSLA'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'date',
+		'fieldtype': 'Date',
+		'label': 'Date',
+		'reqd': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'customer',
+		'fieldtype': 'Link',
+		'label': 'Customer',
+		'options': 'Customer',
+		'reqd': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Column Break'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'invoice_no',
+		'fieldtype': 'Link',
+		'label': 'Invoice No',
+		'options': 'Receivable Voucher'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'previous_sa',
+		'fieldtype': 'Link',
+		'label': 'Previous SA',
+		'options': 'Service Agreement'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Section Break'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'items',
+		'fieldtype': 'Table',
+		'label': 'Items',
+		'options': 'SA Detail'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldtype': 'Button',
+		'label': 'Make Invoice',
+		'trigger': 'Server'
+	}
+]
