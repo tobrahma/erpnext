@@ -14,4 +14,17 @@ class DocType:
 		"""
 			Create Lease Id using naming_series pattern
 		"""
+		#msgprint(self.doc.naming_series)
 		self.doc.name = make_autoname(self.doc.naming_series+ '.#####')
+		
+	def service_visit_post(self, args):
+		"""
+			Posts the service visit
+		"""
+		data = json.loads(args)
+		
+		sv = Document('Service Visit')
+		sv.date = data['visit_date']
+		sv.serial_number = data['serial_number']
+		sv.details = data['visit_details']
+		sv.save(1)

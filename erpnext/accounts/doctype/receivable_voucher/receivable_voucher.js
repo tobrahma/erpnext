@@ -225,6 +225,7 @@ cur_frm.cscript['Get Items'] = function(doc, dt, dn) {
 	  unhide_field(['customer_address','contact_person','customer_name','address_display','contact_display','contact_mobile','contact_email','territory','customer_group']);
 	  cur_frm.refresh();
   }
+  msgprint([doc,dt,dn])
   get_server_fields('pull_details','','',doc, dt, dn,1,callback);
 }
 

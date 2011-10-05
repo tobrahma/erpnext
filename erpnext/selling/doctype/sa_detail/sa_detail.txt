@@ -1,0 +1,98 @@
+# DocType, SA Detail
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2011-10-04 16:06:03',
+		'docstatus': 0,
+		'modified': '2011-10-05 07:51:27',
+		'modified_by': 'Administrator',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all DocType
+	{
+		'colour': 'White:FFF',
+		'doctype': 'DocType',
+		'istable': 1,
+		'module': 'Selling',
+		'name': '__common__',
+		'section_style': 'Simple',
+		'show_in_menu': 0,
+		'version': 7
+	},
+
+	# These values are common for all DocField
+	{
+		'doctype': 'DocField',
+		'name': '__common__',
+		'parent': 'SA Detail',
+		'parentfield': 'fields',
+		'parenttype': 'DocType'
+	},
+
+	# DocType, SA Detail
+	{
+		'doctype': 'DocType',
+		'name': 'SA Detail'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'item',
+		'fieldtype': 'Link',
+		'label': 'Item',
+		'options': 'Item',
+		'reqd': 1,
+		'width': '200px'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'serial_no',
+		'fieldtype': 'Data',
+		'label': 'Serial No',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'address',
+		'fieldtype': 'Text',
+		'label': 'Address',
+		'permlevel': 0,
+		'reqd': 1,
+		'width': '150px'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'branch',
+		'fieldtype': 'Data',
+		'label': 'Branch',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'province',
+		'fieldtype': 'Data',
+		'label': 'Province',
+		'permlevel': 0
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'last_service_visit',
+		'fieldtype': 'Link',
+		'label': 'Last Service Visit',
+		'options': 'Service Visit',
+		'permlevel': 0
+	}
+]

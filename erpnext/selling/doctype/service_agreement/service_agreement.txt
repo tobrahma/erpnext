@@ -5,21 +5,21 @@
 	{
 		'creation': '2011-10-04 13:01:05',
 		'docstatus': 0,
-		'modified': '2011-10-04 14:53:36',
+		'modified': '2011-10-05 07:30:10',
 		'modified_by': 'Administrator',
 		'owner': 'Administrator'
 	},
 
 	# These values are common for all DocType
 	{
-		'_last_update': '1317720179',
+		'_last_update': '1317779205',
 		'colour': 'White:FFF',
 		'doctype': 'DocType',
 		'module': 'Selling',
 		'name': '__common__',
 		'section_style': 'Simple',
 		'show_in_menu': 0,
-		'version': 4
+		'version': 11
 	},
 
 	# These values are common for all DocField
@@ -114,7 +114,24 @@
 	# DocField
 	{
 		'doctype': 'DocField',
+		'fieldname': 'service_level',
+		'fieldtype': 'Select',
+		'label': 'Service Level',
+		'options': 'Basic Warranty\nValue Added Warranty\nRegular Post Warranty\nGold Post Warranty\nPlatinum Post Warranty'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
 		'fieldtype': 'Column Break'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'agreement_period',
+		'fieldtype': 'Int',
+		'label': 'Agreement Period (Months)'
 	},
 
 	# DocField
@@ -124,6 +141,16 @@
 		'fieldtype': 'Link',
 		'label': 'Invoice No',
 		'options': 'Receivable Voucher'
+	},
+
+	# DocField
+	{
+		'allow_on_submit': 1,
+		'colour': 'White:FFF',
+		'doctype': 'DocField',
+		'fieldtype': 'Button',
+		'label': 'Make Invoice',
+		'trigger': 'Server'
 	},
 
 	# DocField
@@ -152,9 +179,10 @@
 
 	# DocField
 	{
+		'allow_on_submit': 1,
+		'colour': 'White:FFF',
 		'doctype': 'DocField',
 		'fieldtype': 'Button',
-		'label': 'Make Invoice',
-		'trigger': 'Server'
+		'label': 'Service Visit'
 	}
 ]

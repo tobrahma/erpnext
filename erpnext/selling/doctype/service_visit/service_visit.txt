@@ -1,0 +1,104 @@
+# DocType, Service Visit
+[
+
+	# These values are common in all dictionaries
+	{
+		'creation': '2011-10-05 07:49:20',
+		'docstatus': 0,
+		'modified': '2011-10-05 07:49:20',
+		'modified_by': 'Administrator',
+		'owner': 'Administrator'
+	},
+
+	# These values are common for all DocType
+	{
+		'colour': 'White:FFF',
+		'doctype': 'DocType',
+		'module': 'Selling',
+		'name': '__common__',
+		'section_style': 'Simple',
+		'version': 1
+	},
+
+	# These values are common for all DocField
+	{
+		'doctype': 'DocField',
+		'name': '__common__',
+		'parent': 'Service Visit',
+		'parentfield': 'fields',
+		'parenttype': 'DocType',
+		'permlevel': 0
+	},
+
+	# These values are common for all DocPerm
+	{
+		'create': 1,
+		'doctype': 'DocPerm',
+		'name': '__common__',
+		'parent': 'Service Visit',
+		'parentfield': 'permissions',
+		'parenttype': 'DocType',
+		'read': 1,
+		'write': 1
+	},
+
+	# DocType, Service Visit
+	{
+		'doctype': 'DocType',
+		'name': 'Service Visit'
+	},
+
+	# DocPerm
+	{
+		'doctype': 'DocPerm',
+		'permlevel': 0,
+		'role': 'Sales User',
+		'submit': 0
+	},
+
+	# DocPerm
+	{
+		'amend': 1,
+		'cancel': 1,
+		'doctype': 'DocPerm',
+		'execute': 1,
+		'permlevel': 1,
+		'role': 'Sales User',
+		'submit': 1
+	},
+
+	# DocPerm
+	{
+		'amend': 1,
+		'cancel': 1,
+		'doctype': 'DocPerm',
+		'execute': 1,
+		'permlevel': 0,
+		'role': 'System Manager',
+		'submit': 1
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'serial_no',
+		'fieldtype': 'Data',
+		'label': 'Serial No'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'date',
+		'fieldtype': 'Date',
+		'label': 'Date'
+	},
+
+	# DocField
+	{
+		'doctype': 'DocField',
+		'fieldname': 'details',
+		'fieldtype': 'Text',
+		'label': 'Details'
+	}
+]
